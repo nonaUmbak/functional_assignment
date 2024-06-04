@@ -1,0 +1,103 @@
+-------------------------------------------------------------------------------
+Test set: com.example.BluditTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 0, Errors: 9, Skipped: 0, Time elapsed: 15.17 s <<< FAILURE! - in com.example.BluditTest
+addContent  Time elapsed: 9.299 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome 
+Host info: host: 'Nomundaris-MacBook-Air.local', ip: 'fe80:0:0:0:27:a83a:3a0e:ae0%en0'
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]
+	at com.example.BluditTest.beforeEach(BluditTest.java:29)
+
+addContentDraft  Time elapsed: 0.841 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome 
+Host info: host: 'Nomundaris-MacBook-Air.local', ip: 'fe80:0:0:0:27:a83a:3a0e:ae0%en0'
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]
+	at com.example.BluditTest.beforeEach(BluditTest.java:29)
+
+addContentSticky  Time elapsed: 0.963 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome 
+Host info: host: 'Nomundaris-MacBook-Air.local', ip: 'fe80:0:0:0:27:a83a:3a0e:ae0%en0'
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]
+	at com.example.BluditTest.beforeEach(BluditTest.java:29)
+
+changeParent  Time elapsed: 0.724 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome 
+Host info: host: 'Nomundaris-MacBook-Air.local', ip: 'fe80:0:0:0:27:a83a:3a0e:ae0%en0'
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]
+	at com.example.BluditTest.beforeEach(BluditTest.java:29)
+
+userAdd  Time elapsed: 0.66 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome 
+Host info: host: 'Nomundaris-MacBook-Air.local', ip: 'fe80:0:0:0:27:a83a:3a0e:ae0%en0'
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]
+	at com.example.BluditTest.beforeEach(BluditTest.java:29)
+
+addSocial  Time elapsed: 0.668 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome 
+Host info: host: 'Nomundaris-MacBook-Air.local', ip: 'fe80:0:0:0:27:a83a:3a0e:ae0%en0'
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]
+	at com.example.BluditTest.beforeEach(BluditTest.java:29)
+
+changePassword  Time elapsed: 0.689 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome 
+Host info: host: 'Nomundaris-MacBook-Air.local', ip: 'fe80:0:0:0:27:a83a:3a0e:ae0%en0'
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]
+	at com.example.BluditTest.beforeEach(BluditTest.java:29)
+
+changeUrl  Time elapsed: 0.667 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome 
+Host info: host: 'Nomundaris-MacBook-Air.local', ip: 'fe80:0:0:0:27:a83a:3a0e:ae0%en0'
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]
+	at com.example.BluditTest.beforeEach(BluditTest.java:29)
+
+deletePost  Time elapsed: 0.644 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome 
+Host info: host: 'Nomundaris-MacBook-Air.local', ip: 'fe80:0:0:0:27:a83a:3a0e:ae0%en0'
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]
+	at com.example.BluditTest.beforeEach(BluditTest.java:29)
+

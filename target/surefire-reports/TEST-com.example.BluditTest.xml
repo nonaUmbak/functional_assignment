@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.BluditTest" time="15.17" tests="9" errors="9" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/nomundarierdenebileg/Desktop/func_ass/testing/target/test-classes:/Users/nomundarierdenebileg/Desktop/func_ass/testing/target/classes:/Users/nomundarierdenebileg/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/nomundarierdenebileg/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-java/4.20.0/selenium-java-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-api/4.20.0/selenium-api-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.20.0/selenium-chrome-driver-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.20.0/selenium-chromium-driver-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-json/4.20.0/selenium-json-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.20.0/selenium-manager-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v122/4.20.0/selenium-devtools-v122-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v123/4.20.0/selenium-devtools-v123-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v124/4.20.0/selenium-devtools-v124-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v85/4.20.0/selenium-devtools-v85-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.20.0/selenium-edge-driver-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.20.0/selenium-firefox-driver-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-http/4.20.0/selenium-http-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/dev/failsafe/failsafe/3.3.2/failsafe-3.3.2.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.20.0/selenium-ie-driver-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.20.0/selenium-remote-driver-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/com/google/guava/guava/33.1.0-jre/guava-33.1.0-jre.jar:/Users/nomundarierdenebileg/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/Users/nomundarierdenebileg/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/nomundarierdenebileg/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/nomundarierdenebileg/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/Users/nomundarierdenebileg/.m2/repository/com/google/errorprone/error_prone_annotations/2.26.1/error_prone_annotations-2.26.1.jar:/Users/nomundarierdenebileg/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/semconv/opentelemetry-semconv/1.25.0-alpha/opentelemetry-semconv-1.25.0-alpha.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-api/1.37.0/opentelemetry-api-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-context/1.37.0/opentelemetry-context-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.37.0/opentelemetry-exporter-logging-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.37.0/opentelemetry-sdk-common-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.37.0/opentelemetry-sdk-extension-autoconfigure-spi-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.37.0/opentelemetry-sdk-extension-autoconfigure-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-api-incubator/1.37.0-alpha/opentelemetry-api-incubator-1.37.0-alpha.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.37.0/opentelemetry-sdk-trace-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.37.0/opentelemetry-sdk-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.37.0/opentelemetry-sdk-metrics-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.37.0/opentelemetry-sdk-logs-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/net/bytebuddy/byte-buddy/1.14.14/byte-buddy-1.14.14.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-os/4.20.0/selenium-os-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/apache/commons/commons-exec/1.4.0/commons-exec-1.4.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.20.0/selenium-safari-driver-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-support/4.20.0/selenium-support-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/Users/nomundarierdenebileg/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/Users/nomundarierdenebileg/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/Users/nomundarierdenebileg/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/nomundarierdenebileg/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/Users/nomundarierdenebileg/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/Users/nomundarierdenebileg/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="MN"/>
+    <property name="sun.boot.library.path" value="/Users/nomundarierdenebileg/Library/Application Support/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/21/lib"/>
+    <property name="sun.java.command" value="/Users/nomundarierdenebileg/Desktop/func_ass/testing/target/surefire/surefirebooter10090668738449352792.jar /Users/nomundarierdenebileg/Desktop/func_ass/testing/target/surefire 2024-06-05T00-48-33_601-jvmRun1 surefire16597364927786484464tmp surefire_015751001592583085895tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/nomundarierdenebileg/Desktop/func_ass/testing/target/test-classes:/Users/nomundarierdenebileg/Desktop/func_ass/testing/target/classes:/Users/nomundarierdenebileg/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/nomundarierdenebileg/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-java/4.20.0/selenium-java-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-api/4.20.0/selenium-api-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.20.0/selenium-chrome-driver-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.20.0/selenium-chromium-driver-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-json/4.20.0/selenium-json-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.20.0/selenium-manager-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v122/4.20.0/selenium-devtools-v122-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v123/4.20.0/selenium-devtools-v123-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v124/4.20.0/selenium-devtools-v124-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v85/4.20.0/selenium-devtools-v85-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.20.0/selenium-edge-driver-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.20.0/selenium-firefox-driver-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-http/4.20.0/selenium-http-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/dev/failsafe/failsafe/3.3.2/failsafe-3.3.2.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.20.0/selenium-ie-driver-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.20.0/selenium-remote-driver-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/com/google/guava/guava/33.1.0-jre/guava-33.1.0-jre.jar:/Users/nomundarierdenebileg/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/Users/nomundarierdenebileg/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/nomundarierdenebileg/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/nomundarierdenebileg/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/Users/nomundarierdenebileg/.m2/repository/com/google/errorprone/error_prone_annotations/2.26.1/error_prone_annotations-2.26.1.jar:/Users/nomundarierdenebileg/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/semconv/opentelemetry-semconv/1.25.0-alpha/opentelemetry-semconv-1.25.0-alpha.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-api/1.37.0/opentelemetry-api-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-context/1.37.0/opentelemetry-context-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.37.0/opentelemetry-exporter-logging-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.37.0/opentelemetry-sdk-common-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.37.0/opentelemetry-sdk-extension-autoconfigure-spi-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.37.0/opentelemetry-sdk-extension-autoconfigure-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-api-incubator/1.37.0-alpha/opentelemetry-api-incubator-1.37.0-alpha.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.37.0/opentelemetry-sdk-trace-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.37.0/opentelemetry-sdk-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.37.0/opentelemetry-sdk-metrics-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.37.0/opentelemetry-sdk-logs-1.37.0.jar:/Users/nomundarierdenebileg/.m2/repository/net/bytebuddy/byte-buddy/1.14.14/byte-buddy-1.14.14.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-os/4.20.0/selenium-os-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/apache/commons/commons-exec/1.4.0/commons-exec-1.4.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.20.0/selenium-safari-driver-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/seleniumhq/selenium/selenium-support/4.20.0/selenium-support-4.20.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/Users/nomundarierdenebileg/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/Users/nomundarierdenebileg/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/nomundarierdenebileg/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/Users/nomundarierdenebileg/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/nomundarierdenebileg/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/Users/nomundarierdenebileg/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/Users/nomundarierdenebileg/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/nomundarierdenebileg"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-04-16"/>
+    <property name="java.home" value="/Users/nomundarierdenebileg/Library/Application Support/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/21"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/nomundarierdenebileg/Desktop/func_ass/testing"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/nomundarierdenebileg/Desktop/func_ass/testing/target/surefire/surefirebooter10090668738449352792.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="21.0.3+9-LTS"/>
+    <property name="user.name" value="nomundarierdenebileg"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="14.2.1"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-21.0.3+9"/>
+    <property name="localRepository" value="/Users/nomundarierdenebileg/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/x2/kvq4yk0j7k36n92p1v9ybqrm0000gn/T/"/>
+    <property name="java.version" value="21.0.3"/>
+    <property name="user.dir" value="/Users/nomundarierdenebileg/Desktop/func_ass/testing"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/nomundarierdenebileg/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="21.0.3+9-LTS"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="addContent" classname="com.example.BluditTest" time="9.299">
+    <error message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121&#10;Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome &#10;Host info: host: &apos;Nomundaris-MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:27:a83a:3a0e:ae0%en0&apos;&#10;Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;&#10;System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.2.1&apos;, java.version: &apos;21.0.3&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException">org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome 
+Host info: host: 'Nomundaris-MacBook-Air.local', ip: 'fe80:0:0:0:27:a83a:3a0e:ae0%en0'
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]
+	at com.example.BluditTest.beforeEach(BluditTest.java:29)
+</error>
+  </testcase>
+  <testcase name="addContentDraft" classname="com.example.BluditTest" time="0.841">
+    <error message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121&#10;Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome &#10;Host info: host: &apos;Nomundaris-MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:27:a83a:3a0e:ae0%en0&apos;&#10;Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;&#10;System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.2.1&apos;, java.version: &apos;21.0.3&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException">org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome 
+Host info: host: 'Nomundaris-MacBook-Air.local', ip: 'fe80:0:0:0:27:a83a:3a0e:ae0%en0'
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]
+	at com.example.BluditTest.beforeEach(BluditTest.java:29)
+</error>
+  </testcase>
+  <testcase name="addContentSticky" classname="com.example.BluditTest" time="0.963">
+    <error message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121&#10;Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome &#10;Host info: host: &apos;Nomundaris-MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:27:a83a:3a0e:ae0%en0&apos;&#10;Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;&#10;System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.2.1&apos;, java.version: &apos;21.0.3&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException">org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome 
+Host info: host: 'Nomundaris-MacBook-Air.local', ip: 'fe80:0:0:0:27:a83a:3a0e:ae0%en0'
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]
+	at com.example.BluditTest.beforeEach(BluditTest.java:29)
+</error>
+  </testcase>
+  <testcase name="changeParent" classname="com.example.BluditTest" time="0.724">
+    <error message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121&#10;Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome &#10;Host info: host: &apos;Nomundaris-MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:27:a83a:3a0e:ae0%en0&apos;&#10;Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;&#10;System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.2.1&apos;, java.version: &apos;21.0.3&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException">org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome 
+Host info: host: 'Nomundaris-MacBook-Air.local', ip: 'fe80:0:0:0:27:a83a:3a0e:ae0%en0'
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]
+	at com.example.BluditTest.beforeEach(BluditTest.java:29)
+</error>
+  </testcase>
+  <testcase name="userAdd" classname="com.example.BluditTest" time="0.66">
+    <error message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121&#10;Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome &#10;Host info: host: &apos;Nomundaris-MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:27:a83a:3a0e:ae0%en0&apos;&#10;Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;&#10;System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.2.1&apos;, java.version: &apos;21.0.3&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException">org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome 
+Host info: host: 'Nomundaris-MacBook-Air.local', ip: 'fe80:0:0:0:27:a83a:3a0e:ae0%en0'
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]
+	at com.example.BluditTest.beforeEach(BluditTest.java:29)
+</error>
+  </testcase>
+  <testcase name="addSocial" classname="com.example.BluditTest" time="0.668">
+    <error message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121&#10;Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome &#10;Host info: host: &apos;Nomundaris-MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:27:a83a:3a0e:ae0%en0&apos;&#10;Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;&#10;System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.2.1&apos;, java.version: &apos;21.0.3&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException">org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome 
+Host info: host: 'Nomundaris-MacBook-Air.local', ip: 'fe80:0:0:0:27:a83a:3a0e:ae0%en0'
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]
+	at com.example.BluditTest.beforeEach(BluditTest.java:29)
+</error>
+  </testcase>
+  <testcase name="changePassword" classname="com.example.BluditTest" time="0.689">
+    <error message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121&#10;Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome &#10;Host info: host: &apos;Nomundaris-MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:27:a83a:3a0e:ae0%en0&apos;&#10;Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;&#10;System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.2.1&apos;, java.version: &apos;21.0.3&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException">org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome 
+Host info: host: 'Nomundaris-MacBook-Air.local', ip: 'fe80:0:0:0:27:a83a:3a0e:ae0%en0'
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]
+	at com.example.BluditTest.beforeEach(BluditTest.java:29)
+</error>
+  </testcase>
+  <testcase name="changeUrl" classname="com.example.BluditTest" time="0.667">
+    <error message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121&#10;Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome &#10;Host info: host: &apos;Nomundaris-MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:27:a83a:3a0e:ae0%en0&apos;&#10;Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;&#10;System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.2.1&apos;, java.version: &apos;21.0.3&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException">org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome 
+Host info: host: 'Nomundaris-MacBook-Air.local', ip: 'fe80:0:0:0:27:a83a:3a0e:ae0%en0'
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]
+	at com.example.BluditTest.beforeEach(BluditTest.java:29)
+</error>
+  </testcase>
+  <testcase name="deletePost" classname="com.example.BluditTest" time="0.644">
+    <error message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121&#10;Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome &#10;Host info: host: &apos;Nomundaris-MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:27:a83a:3a0e:ae0%en0&apos;&#10;Build info: version: &apos;4.20.0&apos;, revision: &apos;866c76ca80&apos;&#10;System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.2.1&apos;, java.version: &apos;21.0.3&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]" type="org.openqa.selenium.SessionNotCreatedException">org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 125.0.6422.142 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome 
+Host info: host: 'Nomundaris-MacBook-Air.local', ip: 'fe80:0:0:0:27:a83a:3a0e:ae0%en0'
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [], extensions: []}}]}]
+	at com.example.BluditTest.beforeEach(BluditTest.java:29)
+</error>
+  </testcase>
+</testsuite>
