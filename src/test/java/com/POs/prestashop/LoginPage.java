@@ -12,15 +12,15 @@ public class LoginPage extends BasePagePO {
 
     public LoginPage(WebDriver driver) {
         super(driver);
+        driver.get("http://localhost:8080//administrator");
     }
 
     
-    public boolean loginTest(String username, String password){
+    public void login(String username, String password){
         type(usernameInput, username);
         type(passwordInput, password);
         select(clickBox);
         click(submitButton);
-        return true;
     }
 
 

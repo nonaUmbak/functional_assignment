@@ -2,62 +2,34 @@ package com.example;
 
 import static org.junit.Assert.*;
 
-import java.time.Duration;
-
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
+import com.POs.prestashop.CatalogDashboardPO;
+import com.POs.prestashop.LocalizationDashboardPO;
 import com.POs.prestashop.LogOutPage;
 import com.POs.prestashop.LoginPage;
-import com.POs.prestashop.MenuPage;
 import com.POs.prestashop.ProductAttributes;
+import com.POs.prestashop.ProductEditPO;
+import com.POs.prestashop.ProductFailPO;
 import com.POs.prestashop.ProductFeature;
-import com.POs.prestashop.ProductPagePO;
+import com.POs.prestashop.ProductFormPO;
+import com.POs.prestashop.ProductPricePO;
+import com.POs.prestashop.ProductSuccessPO;
 import com.POs.prestashop.StatePage;
 
-public class Prestashop {
-
-    private WebDriver driver;
-
-    @BeforeAll
-    public static void beforeAll(){
-        System.setProperty("webdriver.chrome.driver", "/Users/nomundarierdenebileg/Downloads/chromedriver-mac-arm64/chromedriver");
-    }
-
-    @BeforeEach
-    public void beforeEach(){
-        this.driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.get("http://localhost:8080//administrator");
-    }
-
+public class Prestashop extends DriverLifeCyclingSetting{
 
     public void login(String username, String password){
         LoginPage login = new LoginPage(driver);
-        login.loginTest( username, password);
+        login.login( username, password);
     }
 
     public void loginAdmin(){
         login("admin@prestashop.com", "password");
     }
 
-
-    // @AfterEach
     public void logout(){
         LogOutPage logOutPage = new LogOutPage(driver);
         logOutPage.logout();
-        logOutPage.isLogoutSuccessful();
-    }
-
-    @AfterEach
-    public void afterEach(){
-
-        if (driver != null) {
-            driver.quit();
-        }
+        // logOutPage.isLogoutSuccessful();
     }
 
 
@@ -66,12 +38,14 @@ public class Prestashop {
     {
         loginAdmin();
 
-        MenuPage menuPage = new MenuPage(driver);
+        CatalogDashboardPO menuPage = new CatalogDashboardPO(driver);
         menuPage.selectCatalogProduct();
-        ProductPagePO productPage = new ProductPagePO(driver);
+
+        ProductFormPO productPage = new ProductFormPO(driver);
         productPage.addNewProduct("Blue Jacket3");
-        Boolean result = productPage.isProductCreationSuccessful();
-        assertTrue(result);
+
+        ProductSuccessPO successPO = new ProductSuccessPO(driver);
+        assertTrue(successPO.isProductCreationSuccessful());
 
         logout();
     }
@@ -80,14 +54,21 @@ public class Prestashop {
     public void addProductFail(){
         loginAdmin();
 
-        MenuPage menuPage = new MenuPage(driver);
+        CatalogDashboardPO menuPage = new CatalogDashboardPO(driver);
         menuPage.selectCatalogProduct();
 
 
-        ProductPagePO productPage = new ProductPagePO(driver);
+        ProductFormPO productPage = new ProductFormPO(driver);
         productPage.addNewProduct("");
-        Boolean result = productPage.isProductCreationFailed();
-        assertTrue(result);
+
+        ProductFailPO creationFailPO = new ProductFailPO(driver);
+        assertTrue(creationFailPO.failAlertIsPresent());
+
+        String alertText = creationFailPO.getFailAlertText();
+
+        String expectedAlertText = "2 errors This link_rewrite field is required at least in English (English) This name field is required at least in English (English)";
+        
+        assertEquals(expectedAlertText, alertText);
 
         logout();
 
@@ -97,14 +78,15 @@ public class Prestashop {
     public void editProduct(){
         loginAdmin();
 
-        MenuPage menuPage = new MenuPage(driver);
+        CatalogDashboardPO menuPage = new CatalogDashboardPO(driver);
         menuPage.selectCatalogProduct();
 
 
-        ProductPagePO productPage = new ProductPagePO(driver);
+        ProductEditPO productPage = new ProductEditPO(driver);
         productPage.editProduct("Blue Jacket3", "Deep Blue Jacket");
-        Boolean result = productPage.isProductCreationSuccessful();
-        assertTrue(result);
+
+        ProductSuccessPO successPO = new ProductSuccessPO(driver);
+        assertTrue(successPO.isProductCreationSuccessful());
 
         logout();
     }
@@ -113,7 +95,7 @@ public class Prestashop {
     public void addState() {
         loginAdmin();
 
-        MenuPage menuPage = new MenuPage(driver);
+        LocalizationDashboardPO menuPage = new LocalizationDashboardPO(driver);
         menuPage.selectLocalization();
 
         StatePage statePage = new StatePage(driver);
@@ -129,7 +111,7 @@ public class Prestashop {
     public void emptySave() {
         loginAdmin();
 
-        MenuPage menuPage = new MenuPage(driver);
+        LocalizationDashboardPO menuPage = new LocalizationDashboardPO(driver);
         menuPage.selectLocalization();
 
         StatePage statePage = new StatePage(driver);
@@ -145,11 +127,14 @@ public class Prestashop {
     public void verifyPrice() {
         loginAdmin();
 
-        MenuPage menuPage = new MenuPage(driver);
+        CatalogDashboardPO menuPage = new CatalogDashboardPO(driver);
         menuPage.selectCatalogProduct();
 
-        ProductPagePO productPage = new ProductPagePO(driver);
+        ProductPricePO productPage = new ProductPricePO(driver);
         productPage.addPrice(10.0);
+        String actual = productPage.getFinalPrice();
+        String expectedValue = "12.20";
+        assertEquals(expectedValue, actual);
 
         logout();
 
@@ -159,11 +144,16 @@ public class Prestashop {
     public void verifyPriceWithTax() {
         loginAdmin();
         
-        MenuPage menuPage = new MenuPage(driver);
+        CatalogDashboardPO menuPage = new CatalogDashboardPO(driver);
         menuPage.selectCatalogProduct();
 
-        ProductPagePO productPage = new ProductPagePO(driver);
+        ProductPricePO productPage = new ProductPricePO(driver);
         productPage.addPriceWithTax(10.0, "IT Reduced Rate (10%)");
+
+        String actual = productPage.getFinalPrice();
+        String expectedValue = "11.00";
+        assertEquals(expectedValue, actual);
+
 
         logout();
 
@@ -173,13 +163,14 @@ public class Prestashop {
     public void addProductFeature() {
         loginAdmin();
         
-        MenuPage menuPage = new MenuPage(driver);
+        CatalogDashboardPO menuPage = new CatalogDashboardPO(driver);
         menuPage.selectFeauture();
 
         ProductFeature productPage = new ProductFeature(driver);
         productPage.addFeature("Strong");
-        Boolean result = productPage.isProductCreationSuccessful();
-        assertTrue(result);
+
+        ProductSuccessPO successPO = new ProductSuccessPO(driver);
+        assertTrue(successPO.isProductCreationSuccessful());
 
         logout();
 
@@ -189,13 +180,18 @@ public class Prestashop {
     public void addEmptyProductFeature() {
         loginAdmin();
         
-        MenuPage menuPage = new MenuPage(driver);
+        CatalogDashboardPO menuPage = new CatalogDashboardPO(driver);
         menuPage.selectFeauture();
 
         ProductFeature productPage = new ProductFeature(driver);
         productPage.addEmptyFeature();
-        Boolean result = productPage.isProductCreationFailed();
-        assertTrue(result);
+
+        ProductFailPO failPO = new ProductFailPO(driver);
+        assertTrue(failPO.failAlertIsPresent());
+        String alertText = failPO.getFailAlertText();
+
+        String expectedAlertText = "The field name is required at least in English (English).";
+        assertEquals(expectedAlertText, alertText);
 
         logout();
 
@@ -205,14 +201,38 @@ public class Prestashop {
     public void addProductAttribute() {
         loginAdmin();
         
-        MenuPage menuPage = new MenuPage(driver);
+        CatalogDashboardPO menuPage = new CatalogDashboardPO(driver);
         menuPage.selectAttributes();
 
         ProductAttributes productPage = new ProductAttributes(driver);
         productPage.addAttribute("Quantity", "Qnt");
-        Boolean result = productPage.isProductCreationSuccessful();
-        assertTrue(result);
+        
+        ProductSuccessPO successPO = new ProductSuccessPO(driver);
+        assertTrue(successPO.isProductCreationSuccessful());
 
+        String expectedAlertText = "The field name is required at least in English (English).";
+
+        logout();
+
+    }
+
+    @org.junit.jupiter.api.Test
+    public void addProductAttributeFail() {
+        loginAdmin();
+        
+        CatalogDashboardPO menuPage = new CatalogDashboardPO(driver);
+        menuPage.selectAttributes();
+
+        ProductAttributes productPage = new ProductAttributes(driver);
+        productPage.addAttribute("Quantity", "Qnt");
+        
+        ProductFailPO failPO = new ProductFailPO(driver);
+        assertTrue(failPO.failAlertIsPresent());
+
+        String alertString = failPO.getFailAlertText();
+        String expectedAlertText = "The field name is required at least in English (English).";
+
+        assertEquals(expectedAlertText,alertString);
         logout();
 
     }
