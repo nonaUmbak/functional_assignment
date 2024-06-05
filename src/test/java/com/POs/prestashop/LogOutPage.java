@@ -3,6 +3,8 @@ package com.POs.prestashop;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.POs.BasePagePO;
+
 public class LogOutPage extends BasePagePO {
 
     By userIcon = By.className("imgm");

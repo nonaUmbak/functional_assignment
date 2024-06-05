@@ -1,11 +1,15 @@
-package com.POs.prestashop;
+package com.POs;
+
+import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePagePO {
     protected WebDriver driver;
@@ -56,6 +60,19 @@ public class BasePagePO {
     public void scrollIntoView(By locator) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(locator));
+    }
+
+
+    public WebElement visibilityOfElementLocated(By element, Double seconds) {
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(seconds.longValue()));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+    }
+
+    public WebElement getSelectedValueFromDropDown(By element){
+        WebElement dropdown = driver.findElement(element);
+        Select select = new Select(dropdown);
+        return select.getFirstSelectedOption();
+
     }
 
 }

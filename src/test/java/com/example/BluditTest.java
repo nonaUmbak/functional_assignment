@@ -2,34 +2,23 @@ package com.example;
 
 import static org.junit.Assert.*;
 
-import java.time.Duration;
-
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.POs.bludit.ContentPO;
+import com.POs.bludit.ContentAdvancedPO;
+import com.POs.bludit.ContentFormPO;
+import com.POs.bludit.ContentParentPO;
+import com.POs.bludit.ContentStickyPO;
+import com.POs.bludit.ContentSuccessPO;
+import com.POs.bludit.ContentUrlPO;
 import com.POs.bludit.Dashboard;
+import com.POs.bludit.DraftContentPO;
 import com.POs.bludit.LoginPO;
 import com.POs.bludit.LogoutPO;
+import com.POs.bludit.PostPO;
 import com.POs.bludit.UserPO;
 
-public class BluditTest {
+public class BluditTest extends DriverLifeCyclingSetting {
     private WebDriver driver;
-
-    @BeforeAll
-    public static void beforeAll(){
-        System.setProperty("webdriver.chrome.driver", "/Users/nomundarierdenebileg/Downloads/chromedriver-mac-arm64/chromedriver");
-    }
-
-    @BeforeEach
-    public void beforeEach(){
-        this.driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.get("http://localhost:8080/admin");
-    }
 
 
     public void login(String username, String password){
@@ -41,20 +30,10 @@ public class BluditTest {
         login("admin", "password");
     }
 
-
-    // @AfterEach
     public void logout(){
         LogoutPO logOutPage = new LogoutPO(driver);
         logOutPage.logout();
         // logOutPage.isLogoutSuccessful();
-    }
-
-    @AfterEach
-    public void afterEach(){
-
-        if (driver != null) {
-            driver.quit();
-        }
     }
 
     @org.junit.jupiter.api.Test
@@ -65,10 +44,12 @@ public class BluditTest {
         dashboard.clickNewContent();
 
         String title = "Test Content";
-        ContentPO contentPO = new ContentPO(driver);
+        ContentFormPO contentPO = new ContentFormPO(driver);
         contentPO.saveContent(title);
 
-        contentPO.verifyContentTitle(title);
+        ContentSuccessPO successPO = new ContentSuccessPO(driver);
+        String titleByInd = successPO.getTitleOfContentSection(1);
+        assertEquals(title, titleByInd);
 
         logout();
 
@@ -82,11 +63,17 @@ public class BluditTest {
         dashboard.clickContent();
 
         String title = "Test Content", url = "new-post-url";
-        ContentPO contentPO = new ContentPO(driver);
-        contentPO.changeUrl(title, url);
+        
+        ContentAdvancedPO advancedPO = new ContentAdvancedPO(driver);
+        advancedPO.clickAdvanced(title);
+
+        ContentUrlPO contentPO = new ContentUrlPO(driver);
+        contentPO.changeUrl(url);
 
         dashboard.clickContent();
-        contentPO.verifyContentUrl(title, "/" + url);
+        ContentUrlPO contentUrlPO = new ContentUrlPO(driver);
+        String contentUrl = contentUrlPO.getContentUrl(title);
+        assertEquals( "/" + url, contentUrl);
 
         logout();
 
@@ -100,13 +87,17 @@ public class BluditTest {
         dashboard.clickContent();
 
         String title = "Test Content", option = "Create your own content";
-        ContentPO contentPO = new ContentPO(driver);
-        contentPO.changeParent(title, option);
+        ContentAdvancedPO advancedPO = new ContentAdvancedPO(driver);
+        advancedPO.clickAdvanced(title);
+
+        ContentParentPO contentParentPO = new ContentParentPO(driver);
+        contentParentPO.changeParent(option);
 
         dashboard.clickContent();
+        advancedPO.clickAdvanced(title);
 
-        contentPO.clickAdvanced(title);
-        contentPO.verifyParent(option);
+        String actualOption = contentParentPO.getSelectedParent();
+        assertEquals(option, actualOption);
 
         logout();
 
@@ -120,9 +111,12 @@ public class BluditTest {
         dashboard.clickNewContent();
 
         String title = "Draft Content";
-        ContentPO contentPO = new ContentPO(driver);
+        ContentFormPO contentPO = new ContentFormPO(driver);
         contentPO.saveDraft(title);
-        contentPO.verifyDraftContentTitle(title);
+        
+        DraftContentPO draftContentPO = new DraftContentPO(driver);
+        String draftTitle = draftContentPO.getDraftContentTitle(1);
+        assertEquals(title, draftTitle);
 
         logout();
 
@@ -137,10 +131,13 @@ public class BluditTest {
 
         String title = "Set up your new site", status = "Sticky";
 
-        ContentPO contentPO = new ContentPO(driver);
-        contentPO.setStickyPost(title, status);
+        ContentAdvancedPO advancedPO = new ContentAdvancedPO(driver);
+        advancedPO.clickAdvanced();
+
+        ContentStickyPO stickyPO = new ContentStickyPO(driver);
+        stickyPO.setStickyPost(title, status);
         dashboard.clickContent();
-        contentPO.verifyStickyContentTitle(title);
+        assertTrue(stickyPO.isExistStickyContentByTitle(title));
 
         logout();
 
@@ -154,7 +151,7 @@ public class BluditTest {
         Dashboard dashboard = new Dashboard(driver);
         dashboard.clickContent();
 
-        ContentPO contentPO = new ContentPO(driver);
+        PostPO contentPO = new PostPO(driver);
         contentPO.deletePost(title);
         contentPO.checkNotExist(title);
 

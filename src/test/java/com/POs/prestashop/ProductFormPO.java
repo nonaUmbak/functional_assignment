@@ -3,16 +3,16 @@ package com.POs.prestashop;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class ProductCreatePO  extends BasePagePO{
+import com.POs.BasePagePO;
+
+public class ProductFormPO  extends BasePagePO{
 
     By addProduct = By.id("page-header-desc-product-new_product");
     By name = By.id("name_1");
     By submitButton = By.name("submitAddproduct");
-    By successAlert = By.className("alert-success");
 
-    public ProductCreatePO(WebDriver driver) {
+    public ProductFormPO(WebDriver driver) {
         super(driver);
-        driver.get("http://localhost:8080//administrator");
     }
 
     public void addNewProduct(String productName) {
@@ -28,7 +28,5 @@ public class ProductCreatePO  extends BasePagePO{
         }
     }
 
-    public boolean isProductCreationSuccessful() {
-        return isIn(successAlert);
-    }
+
 }

@@ -3,6 +3,8 @@ package com.POs.prestashop;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.POs.BasePagePO;
+
 import io.opentelemetry.api.internal.StringUtils;
 
 public class ProductFeature extends BasePagePO{
@@ -13,7 +15,6 @@ public class ProductFeature extends BasePagePO{
 
     public ProductFeature(WebDriver driver) {
         super(driver);
-        driver.get("http://localhost:8080//administrator");
     }
 
     public void fillForm(String productName) {

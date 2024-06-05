@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.POs.BasePagePO;
+
 public class ProductEditPO extends BasePagePO{
 
     By name = By.id("name_1");
@@ -14,7 +16,6 @@ public class ProductEditPO extends BasePagePO{
 
      public ProductEditPO(WebDriver driver) {
         super(driver);
-        driver.get("http://localhost:8080//administrator");
     }
 
     public void editProduct(String currentName, String productName) {

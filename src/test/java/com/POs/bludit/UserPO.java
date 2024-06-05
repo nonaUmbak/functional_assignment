@@ -17,13 +17,7 @@ import com.POs.BasePO;
 public class UserPO extends BasePO {
 
 
-    By userAdd = By.linkText("Add a new user");
-    By usernameInput = By.id("jsnew_username");
-    By passwordInput = By.id("jsnew_password");
-    By confirmPassInput = By.id("jsconfirm_password");
-    By emailInput =  By.id("jsemail");
-    By roleDropDown = By.id("jsrole");
-    By save = By.xpath("//button[text()='Save']");
+   
     By changePass = By.linkText("Change password");
     By faceBookInput = By.id("jsfacebook");
     By instaInput = By.id("jsinstagram");
@@ -32,15 +26,7 @@ public class UserPO extends BasePO {
         super(driver);
     }
 
-    public void addUser(String username, String pass, String confirmPass, String email, String role){
-        click(userAdd);
-        type(usernameInput, username);
-        type(passwordInput, pass);
-        type(confirmPassInput, confirmPass);
-        type(emailInput, email);
-        selectDropdown(roleDropDown, role);
-        click(save);
-    }
+ 
 
     public void checkUsernameDisplayed(String username) {
         String xpath = "//table[@class='uk-table uk-table-striped']//td/a[contains(text(), '" + username + "')]";
