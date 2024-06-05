@@ -11,8 +11,8 @@ public class BaseDashboard extends BasePagePO{
 
     public BaseDashboard(WebDriver driver) {
         super(driver);
+        driver.get("http://localhost:8080//administrator");
     }
-
 
     WebElement parentMenu, subMenu;
 

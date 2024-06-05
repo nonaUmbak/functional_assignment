@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 public class LocalizationDashboardPO extends BaseDashboard {
 
-
     By localization = By.id("maintab-AdminParentLocalization");
     By localizationMenu = By.id("subtab-AdminStates");
 

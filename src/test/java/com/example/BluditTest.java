@@ -1,9 +1,12 @@
 package com.example;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.NoSuchElementException;
 
+import com.POs.bludit.AlertPO;
 import com.POs.bludit.ContentAdvancedPO;
 import com.POs.bludit.ContentFormPO;
 import com.POs.bludit.ContentParentPO;
@@ -14,13 +17,14 @@ import com.POs.bludit.Dashboard;
 import com.POs.bludit.DraftContentPO;
 import com.POs.bludit.LoginPO;
 import com.POs.bludit.LogoutPO;
+import com.POs.bludit.PasswordChangerPO;
 import com.POs.bludit.PostPO;
-import com.POs.bludit.UserPO;
+import com.POs.bludit.SocialPO;
+import com.POs.bludit.UserCheckerPO;
+import com.POs.bludit.UserFormPO;
 
 public class BluditTest extends DriverLifeCyclingSetting {
-    private WebDriver driver;
-
-
+    
     public void login(String username, String password){
         LoginPO login = new LoginPO(driver);
         login.loginTest( username, password);
@@ -132,10 +136,10 @@ public class BluditTest extends DriverLifeCyclingSetting {
         String title = "Set up your new site", status = "Sticky";
 
         ContentAdvancedPO advancedPO = new ContentAdvancedPO(driver);
-        advancedPO.clickAdvanced();
+        advancedPO.clickAdvanced(title);
 
         ContentStickyPO stickyPO = new ContentStickyPO(driver);
-        stickyPO.setStickyPost(title, status);
+        stickyPO.setStickyPost(status);
         dashboard.clickContent();
         assertTrue(stickyPO.isExistStickyContentByTitle(title));
 
@@ -146,14 +150,14 @@ public class BluditTest extends DriverLifeCyclingSetting {
     @org.junit.jupiter.api.Test
     public void deletePost(){
         loginAdmin();
-        String title = "Follow Bludit";
+        String title = "Test Content";
 
         Dashboard dashboard = new Dashboard(driver);
         dashboard.clickContent();
 
         PostPO contentPO = new PostPO(driver);
         contentPO.deletePost(title);
-        contentPO.checkNotExist(title);
+        assertThrows(NoSuchElementException.class, () -> { contentPO.checkNotExist(title);});
 
         logout();
 
@@ -169,10 +173,11 @@ public class BluditTest extends DriverLifeCyclingSetting {
         Dashboard dashboard = new Dashboard(driver);
         dashboard.clickUsers();
 
-        UserPO userPO = new UserPO(driver);
+        UserFormPO userPO = new UserFormPO(driver);
         userPO.addUser(username, pass, confirmPass, email, "Administrator");
 
-        userPO.checkUsernameLocatedInPosition(username, 3);
+        UserCheckerPO userCheckerPO = new UserCheckerPO(driver);
+        assertTrue(userCheckerPO.checkUsernameDisplayed(username));
 
         logout();
         
@@ -186,13 +191,14 @@ public class BluditTest extends DriverLifeCyclingSetting {
         Dashboard dashboard = new Dashboard(driver);
         dashboard.clickUsers();
 
-        UserPO userPO = new UserPO(driver);
+        PasswordChangerPO userPO = new PasswordChangerPO(driver);
         userPO.changePassword(2, pass, confirmPass);
-        String alertText = userPO.waitForChangesSavedNotification();
+
+        AlertPO alertPO = new AlertPO(driver);
+        String alertText = alertPO.getAlertText();
         String expectedString = "The changes have been saved";
-
-
         assertEquals(expectedString, alertText);
+
         logout();
     }
 
@@ -203,20 +209,17 @@ public class BluditTest extends DriverLifeCyclingSetting {
         Dashboard dashboard = new Dashboard(driver);
         dashboard.clickUsers();
 
-        UserPO userPO = new UserPO(driver);
         String fbLink = "https://www.facebook.com/some_fake_user_name_52432562135863";
         String igLink = "https://instagram.com/some_fake_user_name_52432562135863";
-        userPO.addSocialTest(1, fbLink, igLink);
-        userPO.checkSocials(fbLink, igLink);
+
+        SocialPO socialPO = new SocialPO(driver);
+        socialPO.addSocialTest(1, fbLink, igLink);
+
+        assertEquals(fbLink, socialPO.getFbLink());
+        assertEquals(igLink, socialPO.getInstaLink());
 
         logout();
 
     }
-
-
-
-
-
-
 
 }

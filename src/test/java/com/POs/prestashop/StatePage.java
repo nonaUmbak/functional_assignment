@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.POs.BasePagePO;
+
 public class StatePage extends BasePagePO {
 
     By addState = By.id("page-header-desc-state-new_state");

@@ -13,7 +13,7 @@ public class LoginPO extends BasePO{
 
     public LoginPO(WebDriver driver) {
         super(driver);
-        driver.get("http://localhost:8080/admin");
+        visit("http://localhost:8080/admin");
     }
 
 

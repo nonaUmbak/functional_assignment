@@ -7,12 +7,13 @@ import com.POs.BasePagePO;
 
 public class ContentAdvancedPO extends BasePagePO {
 
+    By advanced = By.xpath("//h2[@class='sidebar-button' and @data-view='sidebar-advanced-view']");
+
     public ContentAdvancedPO(WebDriver driver) {
         super(driver);
     }
 
     public void clickAdvanced() {
-        By advanced = By.xpath("//h2[@class='sidebar-button' and @data-view='sidebar-advanced-view']");
         click(advanced);
     }
 

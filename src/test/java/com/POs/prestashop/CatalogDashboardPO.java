@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class CatalogDashboardPO extends BaseDashboard {
-
-
     By catalog = By.id("maintab-AdminCatalog");
     By productMenu = By.id("subtab-AdminProducts");
     By productFeature = By.id("subtab-AdminFeatures");

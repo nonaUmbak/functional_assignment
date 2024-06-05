@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.example.Prestashop
+-------------------------------------------------------------------------------
+Tests run: 11, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 112.959 s <<< FAILURE! - in com.example.Prestashop
+addState  Time elapsed: 5.022 s  <<< FAILURE!
+java.lang.AssertionError
+	at com.example.Prestashop.addState(Prestashop.java:104)
+
+editProduct  Time elapsed: 14.36 s  <<< FAILURE!
+java.lang.AssertionError
+	at com.example.Prestashop.editProduct(Prestashop.java:89)
+

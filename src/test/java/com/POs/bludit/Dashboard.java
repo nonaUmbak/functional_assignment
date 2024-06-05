@@ -13,6 +13,7 @@ public class Dashboard extends BasePO{
 
     public Dashboard(WebDriver driver) {
         super(driver);
+        visit("http://localhost:8080/admin");
     }
 
     public void clickNewContent(){

@@ -34,7 +34,7 @@ public class Prestashop extends DriverLifeCyclingSetting{
 
 
     @org.junit.jupiter.api.Test
-    public void testLoginOk()
+    public void addProduct()
     {
         loginAdmin();
 
@@ -224,7 +224,7 @@ public class Prestashop extends DriverLifeCyclingSetting{
         menuPage.selectAttributes();
 
         ProductAttributes productPage = new ProductAttributes(driver);
-        productPage.addAttribute("Quantity", "Qnt");
+        productPage.addAttribute("", "Qnt");
         
         ProductFailPO failPO = new ProductFailPO(driver);
         assertTrue(failPO.failAlertIsPresent());

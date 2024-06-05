@@ -21,9 +21,7 @@ public class ContentStickyPO extends BasePagePO{
         super(driver);
     }
 
-    public void setStickyPost(String title, String status) {
-        By item = By.linkText(title);
-        click(item);
+    public void setStickyPost( String status) {
         selectDropdown(stickyOption, status);
         click(save);
     }

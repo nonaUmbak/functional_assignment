@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -35,8 +36,12 @@ public class PostPO extends BasePO{
 
     public void checkNotExist(String title) {
         By item = By.xpath("//a[contains(text(), '" + title + "')]");
+        try {
         WebElement element = driver.findElement(item);
         fail("Object with title '" + title + "' still exists");
+        } catch (NoSuchElementException e){
+            throw e;
+        }
     }
 
 

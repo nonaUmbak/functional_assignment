@@ -3,6 +3,8 @@ package com.POs.prestashop;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.POs.BasePagePO;
+
 public class LoginPage extends BasePagePO {
 
     By usernameInput = By.id("email");
@@ -12,7 +14,7 @@ public class LoginPage extends BasePagePO {
 
     public LoginPage(WebDriver driver) {
         super(driver);
-        driver.get("http://localhost:8080//administrator");
+        visit("http://localhost:8080//administrator");
     }
 
     

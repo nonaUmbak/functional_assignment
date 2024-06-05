@@ -22,10 +22,11 @@ public class ProductFailPO extends BasePagePO {
 
     public String getFailAlertText(){
         WebElement alertElement = driver.findElement(failedAlert);
-        return alertElement.getText().replace("\n", " ").trim();
-        // if (alertText.startsWith("×")) {
-        //     alertText = alertText.substring(1).trim();
-        // }
+        String alertText = alertElement.getText().replace("\n", " ").trim();
+        if (alertText.startsWith("×")) {
+            alertText = alertText.substring(1).trim();
+        }
+        return alertText;
     }
 
 }
