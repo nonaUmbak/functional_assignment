@@ -29,6 +29,14 @@ public class MantisbtUserPO {
         driver.findElement(elem).sendKeys(key1);
     }
 
+    public void set_NAME_username_1(String key3) {
+        By elem = By.name("username");
+        MyUtils.WaitForElementLoaded(driver, elem);
+        driver.findElement(elem).click();
+        driver.findElement(elem).clear();
+        driver.findElement(elem).sendKeys(key3);
+    }
+
     public void set_NAME_password(String key2) {
         By elem = By.name("password");
         MyUtils.WaitForElementLoaded(driver, elem);
@@ -89,7 +97,8 @@ public class MantisbtUserPO {
     }
 
     public void click_CSSSELECTOR_optionnth_child3() {
-        By elem = By.cssSelector("option:nth-child(3)");
+        // By elem = By.cssSelector("option:nth-child(3)");
+        By elem = By.className("button");
         MyUtils.WaitForElementLoaded(driver, elem);
         driver.findElement(elem).click();
     }
@@ -122,7 +131,9 @@ public class MantisbtUserPO {
 
 
     public void set_CSSSELECTOR_trnth_child2center() {
-        By elem = By.className("button");
+        // By elem = By.className("button");
+        By elem = By.xpath("/html/body/div[3]/form/table/tbody/tr[8]/td/input");
+        MyUtils.WaitForElementLoaded(driver, elem);
         driver.findElement(elem).click();
     }
 

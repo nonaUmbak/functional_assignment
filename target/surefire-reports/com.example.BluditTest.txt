@@ -1,0 +1,21 @@
+-------------------------------------------------------------------------------
+Test set: com.example.BluditTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 30.024 s <<< FAILURE! - in com.example.BluditTest
+userAdd  Time elapsed: 6.5 s  <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//table[@class='uk-table uk-table-striped']//td/a[contains(text(), 'test1')]"}
+  (Session info: chrome=125.0.6422.142)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.20.0', revision: '866c76ca80'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2decdd0468fbe153cec611c96408c5f8, findElement {using=xpath, value=//table[@class='uk-table uk-table-striped']//td/a[contains(text(), 'test1')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.142, chrome: {chromedriverVersion: 125.0.6422.141 (4b1e8393712..., userDataDir: /var/folders/x2/kvq4yk0j7k3...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59555}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:59555/devtoo..., se:cdpVersion: 125.0.6422.142, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2decdd0468fbe153cec611c96408c5f8
+	at com.example.BluditTest.userAdd(BluditTest.java:180)
+
+changeUrl  Time elapsed: 1.455 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:</[]new-post-url> but was:</[create-your-own-content/]new-post-url>
+	at com.example.BluditTest.changeUrl(BluditTest.java:80)
+

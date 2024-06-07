@@ -18,16 +18,8 @@ public class LogOutPage extends BasePagePO {
     }
 
     public void logout() {
-        try{
-            Thread.sleep(2000);
-            click(userIcon);
-
-            Thread.sleep(2000);
-            click(logOut);
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            System.out.println("Exception happened in logout");
-        }
+        click(userIcon);
+        click(logOut);
     }
 
     public boolean isLogoutSuccessful() {

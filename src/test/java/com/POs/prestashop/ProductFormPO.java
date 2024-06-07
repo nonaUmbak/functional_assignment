@@ -16,16 +16,10 @@ public class ProductFormPO  extends BasePagePO{
     }
 
     public void addNewProduct(String productName) {
-        try {
-            click(addProduct);
-            Thread.sleep(2000);
-            type(name, productName);
-            Thread.sleep(2000);
-            scrollIntoView(submitButton);
-            click(submitButton);
-        } catch (Exception e) {
-            System.out.println("Error in add new Product");
-        }
+        click(addProduct);
+        type(name, productName);
+        scrollIntoView(submitButton);
+        click(submitButton);
     }
 
 

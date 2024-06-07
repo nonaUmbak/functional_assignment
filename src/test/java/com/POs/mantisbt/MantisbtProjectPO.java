@@ -110,7 +110,7 @@ public class MantisbtProjectPO {
 
     public void set_CSSSELECTOR_row_1tdnth_child5() {
         By elem = By.cssSelector(".row-1 > td:nth-child(5)");
-        MyUtils.WaitForElementLoaded(driver, elem);
+        // MyUtils.WaitForElementLoaded(driver, elem);
     }
 
     public void fillProject(String key1, String key2, String key3, String key4, String key5) {

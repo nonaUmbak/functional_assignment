@@ -45,20 +45,23 @@ public class ClarolineTest {
         driver.quit();
     }
 
-    @Test
-    public void login() {
+    public void setting(){
         driver.get("http://localhost:3000/claroline11110/index.php");
         driver.manage().window().setSize(new Dimension(1470, 866));
+    }
+
+    @Test
+    public void login() {
+        setting();
         ClarolineLoginPO _LoginPO = new ClarolineLoginPO(driver, js, vars);
         _LoginPO.login("admin", "admin");
     }
 
     @Test
     public void addUser() {
-        driver.get("http://localhost:3000/claroline11110/index.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         ClarolineUserPO _UserPO = new ClarolineUserPO(driver, js, vars);
-        _UserPO.addUser("admin", "admin", "Name0011", "firstname0011", "user0011", "password001", "password001");
+        _UserPO.addUser("admin", "admin", "Name012", "firstname012", "user012", "password002", "password002");
         assertThat(_UserPO.set_CSSSELECTOR_msgSuccess_1(), is("The new user has been sucessfully created"));
         _UserPO.click_LINKTEXT_Logout();
     }
@@ -66,8 +69,7 @@ public class ClarolineTest {
 
     @Test
     public void loginUser() {
-        driver.get("http://localhost:3000/claroline11110/index.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         ClarolineLoginPO _ClarolineLoginPO = new ClarolineLoginPO(driver, js, vars);
         _ClarolineLoginPO.userLogin("user001", "password001");
         assertThat(_ClarolineLoginPO.set_CSSSELECTOR_blockHeaderuserName_1(), is("firstname001 Name001"));
@@ -76,8 +78,7 @@ public class ClarolineTest {
 
     @Test
     public void searchUser() {
-        driver.get("http://localhost:3000/claroline11110/index.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         ClarolineUserPO _ClarolineUserPO = new ClarolineUserPO(driver, js, vars);
         _ClarolineUserPO.searchUser("admin", "admin", "user001");
         assertThat(_ClarolineUserPO.set_ID_L0_1(), is("Name001"));
@@ -88,8 +89,7 @@ public class ClarolineTest {
 
     @Test
     public void addCourse() {
-        driver.get("http://localhost:3000/claroline11110/index.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         ClarolineCoursePO _ClarolineCoursePO = new ClarolineCoursePO(driver, js, vars);
         _ClarolineCoursePO.createCourse("admin", "admin", "Course001", "001", "Sciences", "Economics");
         assertThat(_ClarolineCoursePO.set_CSSSELECTOR_strong_1(), is("001"));
@@ -98,8 +98,7 @@ public class ClarolineTest {
 
     @Test
     public void searchCourse() {
-        driver.get("http://localhost:3000/claroline11110/index.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         ClarolineCoursePO _ClarolineCoursePO = new ClarolineCoursePO(driver, js, vars);
         _ClarolineCoursePO.searchCourse("admin", "admin", "Course001");
         assertThat(_ClarolineCoursePO.set_CSSSELECTOR_ab_1(), is("Course001"));
@@ -109,8 +108,7 @@ public class ClarolineTest {
 
     @Test
     public void addCourseEvent() {
-        driver.get("http://localhost:3000/claroline11110/index.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         ClarolineCoursePO _ClarolineCoursePO = new ClarolineCoursePO(driver, js, vars);
         _ClarolineCoursePO.addEvent("admin", "admin", "Exam 001", "31", "May", "2023", "Genoa");
         assertThat(_ClarolineCoursePO.set_CSSSELECTOR_claroDialogMsg(), is("Event added to the agenda."));
@@ -119,8 +117,7 @@ public class ClarolineTest {
 
     @Test
     public void enrolCourse() {
-        driver.get("http://localhost:3000/claroline11110/index.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         ClarolineCoursePO _ClarolineCoursePO = new ClarolineCoursePO(driver, js, vars);
         _ClarolineCoursePO.enrolCourse("user001", "password001", "Course001");
         assertThat(_ClarolineCoursePO.set_CSSSELECTOR_claroDialogMsg(), is("You've been enrolled on the course"));
@@ -129,8 +126,7 @@ public class ClarolineTest {
 
     @Test
     public void addCourseExercise() {
-        driver.get("http://localhost:3000/claroline11110/index.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         ClarolineCoursePO _ClarolineCoursePO = new ClarolineCoursePO(driver, js, vars);
         _ClarolineCoursePO.addExercise("admin", "admin", "Exercise 001");
         assertThat(_ClarolineCoursePO.set_CSSSELECTOR_claroDialogMsg(), is("Exercise added"));
@@ -139,16 +135,14 @@ public class ClarolineTest {
 
     @Test
     public void makeVisible() {
-        driver.get("http://localhost:3000/claroline11110/index.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         ClarolineCoursePO _ClarolineCoursePO = new ClarolineCoursePO(driver, js, vars);
         _ClarolineCoursePO.makeVisible("admin", "admin");
     }
 
     @Test
     public void addQuestions() {
-        driver.get("http://localhost:3000/claroline11110/index.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         ClarolineCoursePO _ClarolineCoursePO = new ClarolineCoursePO(driver, js, vars);
         _ClarolineCoursePO.addQuestions("admin", "admin");
         _ClarolineCoursePO.addQuestion("Question 1", "3", "-3");

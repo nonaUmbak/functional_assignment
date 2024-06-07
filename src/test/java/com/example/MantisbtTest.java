@@ -47,10 +47,14 @@ public class MantisbtTest {
         driver.quit();
     }
 
-    @Test
-    public void login() {
+    public void setting(){
         driver.get("http://localhost:3000/mantisbt/login_page.php");
         driver.manage().window().setSize(new Dimension(1470, 866));
+    }
+
+    @Test
+    public void login() {
+        setting();
         MantisbtLoginPO _MantisbtLoginPO = new MantisbtLoginPO(driver, js, vars);
         _MantisbtLoginPO.login("administrator", "root");
         assertThat(_MantisbtLoginPO.set_CSSSELECTOR_login_info_left_1(), is("Logged in as: administrator (administrator)"));
@@ -59,26 +63,23 @@ public class MantisbtTest {
 
     @Test
     public void addnewUser() {
-        driver.get("http://localhost:3000/mantisbt/login_page.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         MantisbtUserPO _MantisbtUserPO = new MantisbtUserPO(driver, js, vars);
-        _MantisbtUserPO.addUser("administrator", "root", "username005", "username004", "username2@username.it", "updater");
+        _MantisbtUserPO.addUser("administrator", "root", "username008", "username008", "username8@username.it", "updater");
     }
 
     @Test
     public void addExistingUserFail() {
-        driver.get("http://localhost:3000/mantisbt/login_page.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         MantisbtUserPO _MantisbtUserPO = new MantisbtUserPO(driver, js, vars);
-        _MantisbtUserPO.addExistingUserFail("administrator", "root", "username001", "username001", "username@username.it", "updater");
+        _MantisbtUserPO.addExistingUserFail("administrator", "root", "username001", "username001", "username1@username.it", "updater");
         assertThat(_MantisbtUserPO.set_CSSSELECTOR_trnth_child2center_1(), is("That username is already being used. Please go back and select another one."));
         _MantisbtUserPO.click_LINKTEXT_Logout();
     }
 
     @Test
     public void addEmptyUser() {
-        driver.get("http://localhost:3000/mantisbt/login_page.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         MantisbtUserPO _MantisbtUserPO = new MantisbtUserPO(driver, js, vars);
         _MantisbtUserPO.addEmptyUser("administrator", "root");
         assertThat(_MantisbtUserPO.set_CSSSELECTOR_trnth_child2center_1(), is("A necessary field \"\" was empty. Please recheck your inputs."));
@@ -87,18 +88,16 @@ public class MantisbtTest {
 
     @Test
     public void addProject() {
-        driver.get("http://localhost:3000/mantisbt/login_page.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         MantisbtProjectPO _MantisbtProjectPO = new MantisbtProjectPO(driver, js, vars);
-        _MantisbtProjectPO.addProject("administrator", "root", "Project003", "release", "Description");
+        _MantisbtProjectPO.addProject("administrator", "root", "Project005", "release", "Description");
         assertThat(_MantisbtProjectPO.set_CSSSELECTOR_row_1tdnth_child5_1(), is("Description"));
         _MantisbtProjectPO.click_LINKTEXT_Logout();
     }
 
     @Test
     public void addExistingProject() {
-        driver.get("http://localhost:3000/mantisbt/login_page.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         MantisbtProjectPO _MantisbtProjectPO = new MantisbtProjectPO(driver, js, vars);
         _MantisbtProjectPO.addExistingProject("administrator", "root", "Project001", "release", "Description");
         assertThat(_MantisbtProjectPO.set_CSSSELECTOR_trnth_child2center_1(), is("A project with that name already exists. Please go back and enter a different name."));
@@ -107,20 +106,18 @@ public class MantisbtTest {
 
     @Test
     public void addCategory() {
-        driver.get("http://localhost:3000/mantisbt/login_page.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         driver.findElement(By.name("username")).click();
         MantisbtProjectPO _MantisbtProjectPO = new MantisbtProjectPO(driver, js, vars);
-        _MantisbtProjectPO.addCategory("administrator", "root", "Category006");
-        assertTrue(_MantisbtProjectPO.set_CSSSELECTOR_row_1nth_child5tdnth_child1_1("Category006"));
+        _MantisbtProjectPO.addCategory("administrator", "root", "Category008");
+        assertTrue(_MantisbtProjectPO.set_CSSSELECTOR_row_1nth_child5tdnth_child1_1("Category008"));
         _MantisbtProjectPO.click_LINKTEXT_Logout();
     }
 
 
     @Test
     public void addExistingCategory() {
-        driver.get("http://localhost:3000/mantisbt/login_page.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         MantisbtProjectPO _MantisbtProjectPO = new MantisbtProjectPO(driver, js, vars);
         _MantisbtProjectPO.addExistingCategory("administrator", "root", "Category001");
         assertThat(_MantisbtProjectPO.set_CSSSELECTOR_trnth_child2center_1(), is("A category with that name already exists."));
@@ -129,8 +126,7 @@ public class MantisbtTest {
 
     @Test
     public void addNewIssue() {
-        driver.get("http://localhost:3000/mantisbt/login_page.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         MantisbtReportIssue _MantisbtReportIssue = new MantisbtReportIssue(driver, js, vars);
         _MantisbtReportIssue.addNewIssue("administrator", "root", "Category001", "random", "crash", "immediate", "Summary001", "Description001");
         assertThat(_MantisbtReportIssue.set_CSSSELECTOR_leftnth_child10_1(), is("Summary001"));
@@ -139,8 +135,7 @@ public class MantisbtTest {
 
     @Test
     public void assignIssue() {
-        driver.get("http://localhost:3000/mantisbt/login_page.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         MantisbtReportIssue _MantisbtReportIssue = new MantisbtReportIssue(driver, js, vars);
         _MantisbtReportIssue.assignIssue("administrator", "root", "Assign");
         assertThat(_MantisbtReportIssue.set_CSSSELECTOR_trnth_child4issue_status_1(), is("assigned"));
@@ -149,8 +144,7 @@ public class MantisbtTest {
 
     @Test
     public void updateIssue() {
-        driver.get("http://localhost:3000/mantisbt/login_page.php");
-        driver.manage().window().setSize(new Dimension(1470, 866));
+        setting();
         MantisbtReportIssue _MantisbtReportIssue = new MantisbtReportIssue(driver, js, vars);
         _MantisbtReportIssue.updateIssue("administrator", "root", "low");
         assertThat(_MantisbtReportIssue.set_CSSSELECTOR_row_2nth_child7tdnth_child2_1(), is("low"));
